@@ -7,3 +7,6 @@ This file contains the python code in which when executed, processes the input f
 
 ## Approach
 For the implementation, I chose a solution that is efficient in memory. During execution, only the current row is loaded into memory as opposed to the entire file contents.
+
+## Scheduling
+I chose Cron as my scheduling solution. Since the file is available daily at 1am, I will schedule the script to execute daily at 1.30am. The resulting cron expression will be 30 01 * * *
