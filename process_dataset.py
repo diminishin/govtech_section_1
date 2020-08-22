@@ -8,6 +8,10 @@ abb_set = {
 	'Mr.','Miss','Mrs.','Jr.','MD','DDS','PhD','DVM','Dr.','Ms.','III','II','IV'
 }
 
+#opening new file in append mode to store processed records
+p_f = open('processed_dataset.csv','a')
+p_f.write('first_name,last_name,price,above_100\n')
+
 #opening daily dataset file and begin processing
 with open('dataset.csv', newline='') as f:
 
@@ -53,6 +57,14 @@ with open('dataset.csv', newline='') as f:
 		#check if price is strictly above 100
 		if float(price) > 100:
 			above_100 = "true"
+
+		#write processed records to a new output csv file
+		p_f.write('{},{},{},{}\n'.format(first_name,last_name,price,above_100))
+
+#close both input and output csv files
+f.close()
+p_f.close()
+
 
 
 	
