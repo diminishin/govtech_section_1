@@ -43,6 +43,17 @@ with open('dataset.csv', newline='') as f:
 				else:
 					last_name = name_component
 
+		#if name field is empty, skip the rest of the loop
+		if first_name == "":
+			continue
+
+		#Remove leading zeros from price string
+		price = price.lstrip("0")
+
+		#check if price is strictly above 100
+		if float(price) > 100:
+			above_100 = "true"
+
 
 	
 
